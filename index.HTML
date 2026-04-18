@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obesidad Colombia - Portal de Salud</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Asegura un desplazamiento suave al hacer clic en los enlaces */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Evita que el menú tape el título al bajar */
+        section, article {
+            scroll-margin-top: 100px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-blur-circle"></div>
+    <div class="bg-blur-circle-2"></div>
+    
+    <div class="side-nav">
+        <a href="https://wa.me/573505095832?text=Hola,%20quisiera%20más%20información" 
+           class="side-item whatsapp" 
+           target="_blank" 
+           title="Escríbenos por WhatsApp">
+            <span>💬</span>
+        </a>
+        <a href="#" class="side-item" title="Subir">⬆️</a>
+    </div>
+
+    <header class="main-header">
+        <div class="logo">OBESIDAD <span>COLOMBIA</span></div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#" class="active">INICIO</a></li>
+                <li><a href="#seccion-multimedia">MULTIMEDIA</a></li>
+                <li><a href="#seccion-recursos">RECURSOS</a></li>
+                <li><a href="#seccion-comunidad">FOROS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-title">
+        <h1>Datos y herramientas sobre la obesidad en Colombia</h1>
+    </div>
+
+    <main class="content-wrapper">
+        
+        <section id="seccion-multimedia" class="card">
+            <h2>Estadística de obesidad en Colombia</h2>
+            <div class="kpi-container">
+                <div class="kpi-box"><strong>56.4%</strong><small>Adultos con sobrepeso</small></div>
+                <div class="kpi-box"><strong>1 de 3</strong><small>Jóvenes afectados</small></div>
+                <div class="kpi-box"><strong>+10k</strong><small>Muestra nacional</small></div>
+            </div>
+            <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px;">
+                <iframe 
+                    title="Tablero PBI - Obesidad Colombia" 
+                    src="https://app.powerbi.com/view?r=eyJrIjoiMWYyMDc5NzYtNGRkMC00NWE4LTg5ZWYtMWZiYjI1OTI3ZTNlIiwidCI6ImE4MjdmZWUxLWFjNWEtNDI4ZS04MmFlLTYxOTk2MmY3OTM4NyIsImMiOjR9" 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+                    allowFullScreen="true">
+                </iframe>
+            </div>
+            <p class="img-caption">Dashboard interactivo de salud nacional</p>
+        </section>
+
+        <section id="seccion-calculadora" class="card">
+            <h2 style="text-align: center;">Calculadora de IMC</h2>
+            <div class="calculator-content">
+                <p class="calc-subtitle">Calcula tu índice de masa corporal de forma rápida</p>
+                <div class="input-group">
+                    <label for="peso">Peso (KG)</label>
+                    <input type="number" id="peso" placeholder="Ej: 75">
+                </div>
+                <div class="input-group">
+                    <label for="altura">Altura (CM)</label>
+                    <input type="number" id="altura" placeholder="Ej: 170">
+                </div>
+                <button class="btn-calc" onclick="calcular()">CALCULAR AHORA</button>
+                <div class="result-box" id="resultado">Ingresa tus datos para ver el resultado</div>
+            </div>
+        </section>
+
+        <section class="card-flex card-main">
+        <h2 style="text-align: center;">Video Informativo</h2>
+        <div class="video-container-center">
+            <video controls style="width: 100%; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <source src="videoplayback.mp4" type="video/mp4">
+                Tu navegador no soporta videos incrustados.
+            </video>
+        </div>
+        <p class="img-caption">Visualización oficial Minsalud</p>
+        </section>
+       
+        <section class="card-flex card-main">
+    <h2 style="text-align: center;">Obesidad en el país</h2>
+    
+    <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        <img src="imagen_obesidad.jpg" 
+             alt="Infografía sobre obesidad en Colombia" 
+             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    
+    <p class="img-caption">Visualización de datos geográficos</p>
+</section>
+        
+        <div class="submenu-container">
+            <article id="seccion-recursos" class="sub-card">
+                <div class="icon-circle">🥗</div>
+                <h3>RECURSOS Y GUÍAS</h3>
+                <ul>
+                    <li>Alimentación Saludable<br>
+                        <a href="https://www.youtube.com/watch?v=8Bt-mxkYLKo" target="_blank" class="btn-resource">Ver video</a>
+                    </li>
+                    <li>Rutinas de Ejercicio<br>
+                        <a href="https://www.youtube.com/watch?v=wW_0yhhOOtc" target="_blank" class="btn-resource">Ver rutina</a>
+                    </li>
+                    <li>Guía Médica GPC<br>
+                        <a href="https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/DE/CA/gpc-completa-sobrepeso-obesidad-adultos.pdf" target="_blank" class="btn-resource">Descargar PDF</a>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="sub-card">
+                <div class="icon-circle">📊</div>
+                <h3>ESTADÍSTICAS</h3>
+                <ul>
+                    <li>Informe ENSIN 2015<br>
+                        <a href="https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/VS/ED/GCFI/ensin-colombia-2018.pdf" target="_blank" class="btn-resource">Leer informe</a>
+                    </li>
+                    <li>Impacto económico<br>
+                        <a href="https://www.unicef.org/colombia/comunicados-prensa/obesidad-y-el-sobrepeso-restan-vida-saludable-y-generan-costos" target="_blank" class="btn-resource">Ver estudio</a>
+                    </li>
+                </ul>
+            </article>
+
+            <article id="seccion-comunidad" class="sub-card">
+                <div class="icon-circle">👥</div>
+                <h3>COMUNIDAD Y FOROS</h3>
+                <ul>
+                    <li>Foro de discusión<br>
+                        <a href="https://www.youtube.com/watch?v=t2ugZNsT23Y" target="_blank" class="btn-resource">Unirse</a>
+                    </li>
+                    <li>Casos de Éxito<br>
+                        <a href="https://www.tiktok.com/@josedanielvarg6" target="_blank" class="btn-resource">Ver historias</a>
+                    </li>
+                </ul>
+            </article>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a href="#">Copyright © 2026</a> | <a href="#">Aviso Legal</a> | <a href="#">Contacto</a> | <a href="#">Ayuda</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar información...">
+        </div>
+    </footer>
+
+    <script>
+        function calcular() {
+            const peso = document.getElementById('peso').value;
+            const altura = document.getElementById('altura').value / 100;
+            const res = document.getElementById('resultado');
+
+            if(peso > 0 && altura > 0) {
+                const imc = (peso / (altura * altura)).toFixed(1);
+                let cat = "";
+                let bgColor = "";
+
+                if(imc < 18.5) { cat = "Bajo peso"; bgColor = "#3498db"; }
+                else if(imc < 24.9) { cat = "Normal"; bgColor = "#8ebf42"; }
+                else if(imc < 29.9) { cat = "Sobrepeso"; bgColor = "#f2a154"; }
+                else { cat = "Obesidad"; bgColor = "#e74c3c"; }
+
+                res.style.backgroundColor = bgColor;
+                res.style.color = "#ffffff";
+                res.style.border = "none";
+                res.innerHTML = `
+                    <div style="font-size: 1.4rem; font-weight: bold;">Tu IMC es ${imc}</div>
+                    <div style="font-size: 1.1rem;">Clasificación: ${cat}</div>
+                `;
+            } else {
+                res.style.backgroundColor = "#ffebee";
+                res.style.color = "#c62828";
+                res.innerHTML = "Por favor ingresa datos válidos.";
+            }
+        }
+    </script>
+</body>
+</html>

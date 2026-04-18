@@ -1,0 +1,273 @@
+:root {
+   
+    --bg-main: #f8fafc;          
+    --navbar-bg: #ffffff;
+    --card-bg: #ffffff;
+    
+    --text-dark: #1e293b;        
+    --text-muted: #64748b;
+    
+    --accent-blue: #000000;      
+    --active-bg: #eff6ff;        
+    --border-color: #e2e8f0;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    
+    --sub-blue: #0ea5e9;         
+    --sub-green: #10b981;        
+    --sub-orange: #f59e0b;       
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita scroll horizontal por los círculos de fondo */
+}
+
+/* --- 3. ELEMENTOS DE FONDO (BLOOM EFECTO) --- */
+.bg-blur-circle {
+    position: fixed;
+    top: -10%;
+    right: -5%;
+    width: 500px;
+    height: 500px;
+    background: rgba(14, 165, 233, 0.15); /* Azul sutil */
+    filter: blur(100px);
+    border-radius: 50%;
+    z-index: -1; /* Se queda atrás de todo */
+    pointer-events: none;
+}
+
+.bg-blur-circle-2 {
+    position: fixed;
+    bottom: -5%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    background: rgba(16, 185, 129, 0.12); /* Verde sutil */
+    filter: blur(80px);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* --- 4. HEADER --- */
+.main-header {
+    background-color: var(--navbar-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo { font-weight: 700; font-size: 1.4rem; color: var(--text-dark); }
+.logo span { font-weight: 400; color: #0056b3; }
+
+.main-nav ul { list-style: none; display: flex; gap: 8px; }
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.main-nav a.active, .main-nav a:hover {
+    background-color: var(--active-bg);
+    color: #0056b3;
+}
+
+/* --- 5. ESTRUCTURA PRINCIPAL --- */
+.main-title { text-align: center; padding: 60px 20px 30px; }
+.main-title h1 { font-size: 1.5rem; color: var(--text-dark); font-weight: 700; }
+
+.content-wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.card h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--active-bg);
+    padding-bottom: 12px;
+    text-align: center;
+}
+
+/* KPIs */
+.kpi-container { display: flex; justify-content: space-around; gap: 10px; margin-bottom: 20px; }
+.kpi-box {
+    background: #ccddee;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    flex: 1;
+    border-bottom: 3px solid var(--sub-blue);
+}
+.kpi-box strong { display: block; font-size: 1.2rem; color: #0056b3; }
+.kpi-box small { font-size: 0.7rem; color: var(--text-muted); }
+
+.video-container video { border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.img-caption { font-size: 0.75rem; color: var(--text-muted); margin-top: 12px; text-align: center; }
+
+/* --- 6. CALCULADORA --- */
+.calculator-content { display: flex; flex-direction: column; gap: 20px; }
+.input-group label { font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 6px; }
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+.btn-calc {
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.btn-calc:hover { background-color: #333; }
+
+.result-box {
+    margin-top: 5px;
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--active-bg);
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+/* --- 7. RECURSOS / SUB-CARDS --- */
+.submenu-container {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.sub-card {
+    background: var(--card-bg);
+    padding: 35px 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border-top: 6px solid transparent;
+    transition: 0.3s;
+}
+.sub-card:hover { transform: translateY(-8px); }
+.sub-card:nth-child(1) { border-top-color: var(--sub-blue); }
+.sub-card:nth-child(2) { border-top-color: var(--sub-green); }
+.sub-card:nth-child(3) { border-top-color: var(--sub-orange); }
+
+.btn-resource {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 12px;
+    background: #f1f5f9;
+    color: #0056b3;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+.btn-resource:hover { background: #0056b3; color: white; }
+
+.icon-circle {
+    width: 64px; height: 64px;
+    background: var(--active-bg);
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+}
+
+.sub-card ul { list-style: none; text-align: left; margin-top: 20px; }
+.sub-card li { padding: 12px 0; border-bottom: 1px solid var(--bg-main); }
+
+/* --- 8. BOTONES LATERALES --- */
+.side-nav {
+    position: fixed;
+    right: 20px; 
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 2000;
+}
+
+.side-item {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: 0.3s;
+    font-size: 1.5rem;
+}
+
+.side-item.whatsapp { background-color: #25D366; color: white; }
+.side-item.whatsapp:hover { background-color: #128C7E; transform: scale(1.1) rotate(5deg); }
+.side-item.whatsapp span { filter: brightness(0) invert(1); }
+
+/* --- 9. FOOTER Y RESPONSIVO --- */
+.main-footer {
+    background: #ffffff;
+    padding: 40px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+    border-top: 1px solid var(--border-color);
+}
+
+.search-bar input {
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-main);
+    outline: none;
+}
+
+@media (max-width: 900px) {
+    .content-wrapper, .submenu-container { grid-template-columns: 1fr; }
+    .main-header { flex-direction: column; gap: 15px; }
+    .side-nav { right: 10px; scale: 0.8; }
+}
+html {
+    scroll-behavior: smooth; /* Esto activa la animación de bajada */
+}
+
